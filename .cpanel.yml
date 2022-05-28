@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/sungucbk/repositories/ptcais-app/public/
+    - /bin/cp -R * $DEPLOYPATH
