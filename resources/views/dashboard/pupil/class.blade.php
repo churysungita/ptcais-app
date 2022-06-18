@@ -27,7 +27,7 @@
                         <p>class:  {{ \Illuminate\Support\Facades\DB::table('students')->where('user_id',\Illuminate\Support\Facades\Auth::id())->value('_class')}}
                         </p>
                         <p>Year of study: 2022</p>
-                        <h2>Terminal Continous Assessment</h2>
+                        <h2>Terminal Continuous Assessment</h2>
 
 
                         <div class="container">
@@ -36,27 +36,18 @@
                             <table class="table table-bordered mt-5">
                                 <thead>
                                 <tr>
-                                    <th>S/N</th>
                                     <th>Subject Name</th>
                                     <th>Marks</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Hisabati</td>
-                                    <td>89</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Kuandika</td>
-                                    <td>89</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Kusoma</td>
-                                    <td>89</td>
-                                </tr>
+                                @foreach($terminal as $key=>$term)
+                                    <tr>
+
+                                        <td> {{ $key }}</td>
+                                        <td>{{ $term }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -69,27 +60,18 @@
                             <table class="table table-bordered mt-4">
                                 <thead>
                                 <tr>
-                                    <th>S/N</th>
                                     <th>Subject Name</th>
                                     <th>Marks</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Hisabati</td>
-                                    <td>90</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Kuandika</td>
-                                    <td>79</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Kusoma</td>
-                                    <td>89</td>
-                                </tr>
+                                @foreach($annual as $key=>$term)
+                                    <tr>
+
+                                        <td> {{ $key }}</td>
+                                        <td>{{ $term }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

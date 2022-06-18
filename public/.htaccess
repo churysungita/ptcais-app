@@ -19,3 +19,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+RewriteCond %{HTTP_HOST} ^ptcais\.info$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.ptcais\.info$
+RewriteRule ^/?$ "https\:\/\/ptcais\.info\/" [R=301,L]
+

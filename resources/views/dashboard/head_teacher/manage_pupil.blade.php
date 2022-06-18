@@ -25,31 +25,28 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>Pupils Name</th>
-                                <th>School Name</th>
-                                <th>District Name</th>
+                                <th>First Name</th>
+                                <th>Second Name</th>
+                                <th>Last Name</th>
+                                <th>Class</th>
+                                <th>Age</th>
+                                <th>Gender</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>Dodoma mjini</td>
-                                <td>Hamisi Juma</td>
-                                <td>Moro sec</td>
-
-                                <td>
-                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </td>
-                            </tr>
-
 
                             @foreach($pupils as $pupil)
                                 <tr>
-                                    <td>Hamisi Juma</td>
-                                    <td>Dodoma mjini</td>
-                                    <td>Moro sec</td>
+                                    <td>{{ $pupil->first_name }}</td>
+                                    <td>{{ $pupil->second_name }}</td>
+                                    <td>{{ $pupil->last_name }}</td>
+                                    <td>{{ $pupil->_class }}</td>
+                                    <td>{{ $pupil->age }}</td>
+                                    <td>{{ $pupil->gender }}</td>
+
+
 
                                     <td>
                                         <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
@@ -58,6 +55,10 @@
                                     </td>
                                 </tr>
                             @endforeach
+
+
+
+
 
                             </tbody>
                         </table>

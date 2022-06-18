@@ -1,0 +1,27 @@
+body {
+    background: #eee;
+}
+
+.card {
+    background-color: rgb(183, 171, 224);
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.card-body .align-items-center {
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.card-body .align-items-center h3 {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+}
+
+#myMessage {
+    display: none;
+    font-size: 30px;
+    color: green;
+}

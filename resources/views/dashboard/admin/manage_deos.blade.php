@@ -11,9 +11,11 @@
                             <div class="col-sm-4">
                                 <h2>Deos <b>Details</b></h2>
                             </div>
+
                             <div class="col-sm-4">
-                                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                                <button type="button" class="btn btn-info "><i class="fa fa-plus"></i> Add New</button>
                             </div>
+
                             <div class="col-sm-4">
                                 <div class="search-box">
                                     <div class="input-group">

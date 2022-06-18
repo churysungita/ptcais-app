@@ -15,13 +15,12 @@ return new class extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('student_id');
+            $table->string('registration_number');
             $table->string('school_name');
             $table->string('region');
             $table->string('district');
-            $table->string('head_teacher_name');
+            $table->string('head_teacher_name')->nullable();
             $table->enum('status',['government','private']);
-            $table->foreign('student_id')->references('student_id')->on('students');
         });
     }
 

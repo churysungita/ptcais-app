@@ -45,7 +45,7 @@
                 <li>
                     <hr class="dropdown-divider"/>
                 </li>
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li><a class="dropdown-item" href="{{ url('/') }}">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -74,7 +74,6 @@
                          data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="{{ url('manage_deos') }}">Manage Deo</a>
-
 
                         </nav>
                     </div>
@@ -108,9 +107,7 @@
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                          data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ url('manage_head_teachers') }}">Manage HT</a>
-
-
+                            <a class="nav-link" href="{{ url('head_teachers_details') }}">Manage HeadTeachers</a>
                         </nav>
                     </div>
                 </div>
@@ -134,9 +131,9 @@
                                     <h2>Head Teachers <b>Details</b></h2>
                                 </div>
                                 <div class="col-sm-4">
-                                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add
+                                    <a  href="{{ url('create_head_teacher') }}" class="btn btn-info "><i class="fa fa-plus"></i> Add
                                         New
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="search-box">
@@ -153,25 +150,35 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>Head TeacherName</th>
-                                <th>School Name</th>
-                                <th>District Name</th>
+                                <th>Name</th>
+                                <th>School </th>
+                                <th>Region </th>
+                                <th>District </th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Dodoma mjini</td>
-                                <td>Hamisi Juma</td>
-                                <td>Moro sec</td>
 
-                                <td>
-                                    <a class="add" title="Add" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE03B;</i></a>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </td>
-                            </tr>
+                            @foreach($headTeachers as $headTeacher)
+
+                                <tr>
+                                    <td>{{ $headTeacher ->name }}</td>
+                                    <td>{{ $headTeacher ->school_name }}</td>
+                                    <td>{{ $headTeacher ->region }} </td>
+                                    <td>{{ $headTeacher ->district }}</td>
+
+                                    <td>
+                                        <a class="add" title="Add" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE03B;</i></a>
+                                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                    </td>
+                                </tr>
+
+                            @endforeach
+
+
+
 
                             </tbody>
                         </table>
@@ -181,13 +188,7 @@
         </main>
         <footer class="py-4 bg-light mt-auto ">
             <div class="container-fluid px-4 ">
-                <div class="d-flex align-items-center justify-content-between small ">
-                    <div class="text-muted ">Copyright &copy; Your Website 2022</div>
-                    <div>
-                        <a href="# ">Privacy Policy</a> &middot;
-                        <a href="# ">Terms &amp; Conditions</a>
-                    </div>
-                </div>
+
             </div>
         </footer>
     </div>

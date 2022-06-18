@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('student_id');
             $table->integer('Hisabati');
             $table->integer('Mwandiko');
-            $table->integer('Hisabati');
+            $table->integer('Kusoma');
             $table->timestamps();
         });
     }

@@ -55,11 +55,29 @@ class AuthController extends Controller
                 ])->onlyInput('email');
 
             case 'deo':
-                return redirect('dashboard');
-                //return view('dashboard.deo.deo');
+
+                if (Auth::attempt($credentials)){
+                    $request ->session()->regenerate();
+                    return redirect()->intended('deo_dashboard');
+                }
+
+                return back()->withErrors([
+                    'email' => 'The provided credential do not match our record'
+                ])->onlyInput('email');
+                //return redirect('dashboard');
+
 
             case 'teacher':
-                return redirect('teacher');
+
+                if (Auth::attempt($credentials)){
+                    $request ->session()->regenerate();
+                    return redirect()->intended('teacher');
+                }
+
+                return back()->withErrors([
+                    'email' => 'The provided credential do not match our record'
+                ])->onlyInput('email');
+                //return redirect('teacher');
 
             case 'pupil':
                 if (Auth::attempt($credentials)){
@@ -74,7 +92,7 @@ class AuthController extends Controller
                 //return redirect('pupil_dashboard/'.$userId);
 
             default:
-                return redirect('auth')->with('error','Invalid credentials');
+                return redirect('/')->with('error','Invalid credentials');
         }
 
     }

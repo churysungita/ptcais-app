@@ -1,5 +1,4 @@
 @extends('layouts.head_teacher_dashboard')
-
 @section('content')
     <div id="layoutSidenav_content">
         <main>
@@ -16,7 +15,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a class="datcard my-3" href="#">
+                        <a class="datcard my-3" href="{{ url('manage_teachers') }}">
                             <span style="color:white;" class="h4">Teachers</span>
                             <h4>Total:490</h4>
                             <p> Click to view</p>
@@ -30,17 +29,7 @@
                 </div>
                 </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                    <div>
-                        <a href="#">Privacy Policy</a> &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+
     </div>
 
 @endsection
